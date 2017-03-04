@@ -37,35 +37,43 @@
             <div class="dahsboard-content">
                 <div class="dashboard-slide inventory-slide">
                     <div class="top-name">Inventory</div>
-                    <div class="object-container dashboard-content-container">
-                        <div class="object-photo"></div>
-                        <div class="object-tags">
-                            <p class="tag">Game</p>
-                            <p class="tag">Xbox</p>
+                    <div class="objects-container dashboard-content-container">
+                        <div class="object-info">
+                            <div class="object-photo"></div>
+                            <div class="object-tags">
+                                <p class="tag">Game</p>
+                                <p class="tag-separator"> / </p>
+                                <p class="tag">Xbox</p>
+                            </div>
+                            <div class="object-number">
+                                <p class="number-title">In Stock</p>
+                                <p class="number-stock">20</p>
+                            </div>
+                            <div class="object-date">
+                                <p class="number-title">Last modified on : </p>
+                                <p class="number-stock">20/02/2017</p>
+                            </div>
+                            <p class="object-name">Overwatch : Xbox One</p>
+                            <p class="object-description">Overwatch, the game developped by Blizzard wich is awesome !</p>
+                            <p class="object-price">50€</p>
+                            <button class="button-modify button button-2">Modify</button>
                         </div>
-                        <div class="object-number">
-                            <p class="number-title">In Stock</p>
-                            <p class="number-stock">20</p>
-                        </div>
-                        <div class="object-date">
-                            <p class="number-title">Last modified on : </p>
-                            <p class="number-stock">20/02/2017</p>
-                        </div>
-                        <p class="object-name">Overwatch : Xbox One</p>
-                        <p class="object-description">Overwatch, the game developped by Blizzard wich is awesome !</p>
-                        <p class="object-price">50€</p>
 
                         <div class="modifications-object">
                             <form action="#" method="post">
-                                <label for="tag">Tag</label>
-                                <input type="text" id="tag" placeholder="Tools, Movies" value="Game, Xbox">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" placeholder="Awesome name" value="Overwatch : Xbox One">
+                                <label for="description">Description</label>
+                                <textarea id="description" placeholder="My superb object has an awesome description">Overwatch, the game developped by Blizzard wich is awesome !</textarea>
                                 <label for="price">Price</label>
                                 <input type="text" id="price" placeholder="200" value="50">
-                                <label for="description">Description</label>
-                                <input type="text" id="description" placeholder="My superb object has an awesome description" value="Overwatch, the game developped by Blizzard wich is awesome !">
                                 <label for="number">Number in stock</label>
                                 <input type="number" id="number" placeholder="50" value="20">
+                                <label for="tag">Tag</label>
+                                <input type="text" id="tag" placeholder="Tools, Movies" value="Game, Xbox">
+                                <input type="submit">
                             </form>
+                            <button class="button-delete button button-1">Delete</button>
                         </div>
                     </div>
                 </div>
@@ -73,16 +81,19 @@
                 <div class="dashboard-slide users-slide">
                     <div class="top-name">Users</div>
                     <div class="users-container dashboard-content-container">
-                        <div class="user-photo"></div>
-                        <div class="user-name">Bruno Simon</div>
-                        <div class="user-last-modification">
-                            <p class="last-modification-title">Last modification : </p>
-                            <p class="last-modification-content">Overwatch : Xbox One</p>
-                            <p class="last-modification-date">20/02/2017</p>
-                        </div>
-                        <div class="user-creation-date">
-                            <p class="creation-date-title">Created on :</p>
-                            <p class="creation-date-content">19/03/2017</p>
+                        <div class="user-infos">
+                            <div class="user-photo"></div>
+                            <p class="user-name">Bruno Simon</p>
+                            <div class="user-last-modification">
+                                <p class="last-modification-title">Last modification : </p>
+                                <p class="last-modification-content">Overwatch : Xbox One</p>
+                                <p class="last-modification-date">on 20/02/2017</p>
+                            </div>
+                            <div class="user-creation-date">
+                                <p class="creation-date-title">Created on :</p>
+                                <p class="creation-date-content">19/03/2017</p>
+                            </div>
+                            <button class="user-delete button button-2">Delete</button>
                         </div>
                     </div>
                 </div>
@@ -90,7 +101,7 @@
                 <div class="dashboard-slide export-slide">
                     <div class="top-name">Export</div>
                     <div class="export-container dashboard-content-container">
-                        <button class="export-button">Export</button>
+                        <button class="export-button button button-2">Export</button>
                     </div>
                 </div>
 
