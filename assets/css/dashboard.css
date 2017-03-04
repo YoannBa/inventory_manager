@@ -1,0 +1,353 @@
+.dashboard-container
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+/*
+ * Panel left
+ */
+
+.dashboard-container .panel-left
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 15vw;
+	height: 100vh;
+	background: #303F9F;
+	color: #FAFAFA;
+}
+
+.dashboard-container .panel-left .user-info
+{
+	padding: 30px 20px;
+	text-align: center;
+	width: 100%;
+}
+
+.dashboard-container .panel-left .user-info .user-photo
+{
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	background: #FAFAFA;
+	display: inline-block;
+}
+
+.dashboard-container .panel-left .user-info .user-name
+{
+	margin-top: 20px;
+}
+
+.dashboard-container .panel-left .dashboard-nav
+{
+	margin-top: 50px;
+}
+
+
+.dashboard-container .panel-left .dashboard-nav ul li
+{
+}
+
+.dashboard-container .panel-left .dashboard-nav ul li a
+{
+	padding: 15px 20px;
+	display: block;
+	will-change: background;
+	transition: background 0.15s ease;
+	text-decoration: none;
+	border-top: 1px solid #FAFAFA;
+	font-weight: 700;
+}
+
+.dashboard-container .panel-left .dashboard-nav ul li:last-child a
+{
+	border-bottom: 1px solid #FAFAFA;
+}
+
+.dashboard-container .panel-left .dashboard-nav ul li a:hover
+{
+	background: rgba(255, 255, 255, 0.3);
+}
+
+/*
+ * Dashboard content right
+ */
+
+.dashboard-container .dahsboard-content
+{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 85vw;
+	height: 100vh;
+}
+
+.dashboard-container .dashboard-slide
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: #FAFAFA;
+	display: none;
+}
+
+.dashboard-container .dashboard-slide .top-name
+{
+	font-size: 24px;
+	background: #009688;
+	color: #FAFAFA;
+	padding: 20px 30px;
+}
+
+.dashboard-container .dashboard-slide .dashboard-content-container
+{
+	padding: 50px 30px;
+}
+
+/* Inventory slide */
+.dashboard-container .inventory-slide
+{
+	display: inline-block;
+}
+
+.dashboard-container .inventory-slide .object-info
+{
+	background: #E0F2F1;
+	padding: 30px 30px;
+	border-radius: 10px;
+	position: relative;
+}
+
+.dashboard-container .inventory-slide .object-info .object-photo
+{
+	background: #303F9F;
+	height: 100px;
+	width: 100px;
+}
+
+.dashboard-container .inventory-slide .object-info .object-tags
+{
+	position: absolute;
+	top: 60px;
+	left: 160px;
+	background: #B2DFDB;
+	padding: 5px 5px;
+	border-radius: 5px;
+}
+
+.dashboard-container .inventory-slide .object-info .object-tags p
+{
+	display: inline-block;
+}
+
+.dashboard-container .inventory-slide .object-info .object-number
+{
+	position: absolute;
+	bottom: 30px;
+	left: 560px;
+}
+
+.dashboard-container .inventory-slide .object-info .object-number .number-stock
+{
+	font-weight: 700;
+	margin-top: 5px;
+}
+
+.dashboard-container .inventory-slide .object-info .object-date
+{
+	position: absolute;
+	bottom: 30px;
+	left: 660px;
+}
+
+.dashboard-container .inventory-slide .object-info .object-date .number-stock
+{
+	font-weight: 700;
+	margin-top: 5px;
+}
+
+.dashboard-container .inventory-slide .object-info .object-name
+{
+	position: absolute;
+	top: 30px;
+	left: 160px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.dashboard-container .inventory-slide .object-info .object-description
+{
+	position: absolute;
+	bottom: 30px;
+	left: 160px;
+	width: 300px;
+}
+
+.dashboard-container .inventory-slide .object-info .object-price
+{
+	position: absolute;
+	top: 30px;
+	left: 660px;
+	width: 300px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.dashboard-container .inventory-slide .object-info .button-modify
+{
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+}
+
+.dashboard-container .inventory-slide .modifications-object
+{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	background: #3F51B5;
+	color: #FAFAFA;
+	width: 30vw;
+	height: 100vh;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+	padding: 30px;
+	transform: translateX(30vw);
+	will-change: transform;
+	transition: transform 0.3s ease;
+}
+
+.dashboard-container .inventory-slide .modifications-object label
+{
+	display: block;
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.dashboard-container .inventory-slide .modifications-object input
+{
+	display: block;
+	margin-bottom: 30px;
+	width: 100%;
+	background: #303F9F;
+	padding: 10px 5px;
+	border-radius: 5px;
+}
+
+.dashboard-container .inventory-slide .modifications-object textarea
+{
+	margin-bottom: 30px;
+	display: block;
+	width: 100%;
+	background: #303F9F;
+	padding: 10px 5px;
+	border-radius: 5px;
+	height: 100px;
+}
+
+.dashboard-container .inventory-slide .modifications-object input[type="submit"]
+{
+	cursor: pointer;
+}
+
+.dashboard-container .inventory-slide .modifications-object .button-delete
+{
+	width: 100%;
+}
+
+/* Users slide */
+
+.dashboard-container .users-slide .user-infos
+{
+	background: #E0F2F1;
+	padding: 30px 30px;
+	border-radius: 10px;
+	position: relative;
+}
+
+.dashboard-container .users-slide .user-photo
+{
+	background: #303F9F;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%;
+	display: inline-block;
+}
+
+.dashboard-container .users-slide .user-name
+{
+	position: absolute;
+	top: 30px;
+	left: 130px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.dashboard-container .users-slide .user-last-modification
+{
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	font-size: 14px;
+}
+
+.dashboard-container .users-slide .user-last-modification .last-modification-content
+{
+	font-weight: 700;
+	margin-top: 10px;
+}
+
+.dashboard-container .users-slide .user-last-modification .last-modification-date
+{
+	font-size: 12px;
+	opacity: 0.7;
+}
+
+.dashboard-container .users-slide .user-creation-date
+{
+	position: absolute;
+	bottom: 30px;
+	left: 130px;
+	font-size: 14px;
+}
+
+.dashboard-container .users-slide .user-creation-date .creation-date-content
+{
+	margin-top : 5px;
+	font-weight: 700;
+}
+
+.dashboard-container .users-slide .user-delete
+{
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+
+/* Export slide */
+
+/* Settings slide */
+.dashboard-container .dashboard-slide .settings-container label
+{
+	font-size: 18px;
+	font-weight: 700;
+	display: block;
+	padding: 10px 0px;
+}
+
+.dashboard-container .dashboard-slide .settings-container select
+{
+	margin-bottom: 50px;
+	border: 1px solid #eeeeee;
+	padding: 5px 10px;
+}
+
