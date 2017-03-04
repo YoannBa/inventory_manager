@@ -1,0 +1,110 @@
+/*
+ * Header
+ */
+
+header
+{
+	width: 100vw;
+	padding: 20px 0px;
+}
+
+header .logo
+{
+	text-decoration: none;
+}
+
+header .logo .logo-image
+{
+	width: 30px;
+	height: 30px;
+	background: #303F9F;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+header .logo .logo-text
+{
+	font-size: 18px;
+	color: #303F9F;
+	font-weight: 700;
+	display: inline-block;
+	line-height: 30px;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+
+/*
+ * Landing presentation
+ */
+
+.landing-presentation
+{
+	width: 100%;
+	position: relative;
+}
+
+.landing-presentation .hero-title
+{
+	font-size: 60px;
+	color: #303F9F;
+	margin-top: 150px;
+}
+
+.landing-presentation .hero-subtitle
+{
+	font-size: 14px;
+	color: #7986CB;
+	margin-top: 30px;
+}
+
+.landing-presentation .landing-img
+{
+	background: #303F9F;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	right: 0;
+	top: calc(50% - 150px);
+}
+
+.landing-presentation .landing-access
+{
+	margin-top: 50px;
+}
+
+/*
+ * Pop-ins
+ */
+
+.pop-in.sign-up
+{
+display: none;
+}
+
+.pop-in form
+{
+	width: 100%;
+	margin: 50px 30px;
+	box-sizing: border-box;
+}
+
+.pop-in label
+{
+	display: block;
+}
+
+.pop-in .input-text
+{
+	display: block;
+	width: calc(100% - 60px);
+	padding: 15px 10px;
+	background: #B2DFDB;
+	border-radius: 10px;
+	margin: 10px 0px 20px 0px;
+}
+
+.pop-in .input-submit
+{
+	height: inherit;
+	margin: auto;
+}
