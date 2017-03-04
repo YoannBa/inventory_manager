@@ -9,9 +9,9 @@
         <meta name="description" content="Your dashboard - Manage all your inventory from here" />
 
         <!-- Links -->
-        <link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/general.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/dashboard.css" rel="stylesheet" type="text/css" />
+        <link href="../css/reset.css" rel="stylesheet" type="text/css" />
+        <link href="../css/general.css" rel="stylesheet" type="text/css" />
+        <link href="../css/dashboard.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -117,6 +117,6 @@
 
         </div>
 
-        <script src="assets/js/main.js"></script>
+        <script src="../js/main.js"></script>
     </body>
 </html>
