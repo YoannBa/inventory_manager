@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <div class="dashboard-container">
+        <div class="dashboard-container inventory">
 
             <div class="panel-left">
                 <div class="user-info">
@@ -128,6 +128,6 @@
 
         </div>
 
-        <script src="../js/main.js"></script>
+        <script src="../js/dashboard.js"></script>
     </body>
 </html>
