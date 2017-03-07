@@ -65,8 +65,8 @@
                         <input type="email" name="mail" id="mail" class="input-text" placeholder="john.doe@inventory.com">
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" class="input-text" placeholder="********">
-                        <label for="confirm_pass">Confirm Password</label>
-                        <input type="password" name="confirm_password" id="confirm_pass" class="input-text" placeholder="********">
+                        <label for="confirm-pass">Confirm Password</label>
+                        <input type="password" name="confirm-pass" id="confirm-pass" class="input-text" placeholder="********">
                         <button type="submit" name="form" value="signup" class="button button-1">Sign up</button>
                     </form>
                 </div>
