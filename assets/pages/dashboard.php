@@ -1,3 +1,12 @@
+<?php
+
+    session_start();
+
+    include '../php/config.php';
+    include '../php/display_users.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +30,7 @@
             <div class="panel-left">
                 <div class="user-info">
                     <div class="user-photo"></div>
-                    <p class="user-name">Bruno Simon</p>
+                    <p class="user-name"><?= $_SESSION['username'] ?></p>
                 </div>
 
                 <div class="dashboard-nav">
@@ -81,9 +90,11 @@
                 <div class="dashboard-slide users-slide">
                     <div class="top-name">Users</div>
                     <div class="users-container dashboard-content-container">
+
+                        <?php foreach( $users as $_user ): ?>
                         <div class="user-infos">
                             <div class="user-photo"></div>
-                            <p class="user-name">Bruno Simon</p>
+                            <p class="user-name"> <?= $_user->name; ?> </p>
                             <div class="user-last-modification">
                                 <p class="last-modification-title">Last modification : </p>
                                 <p class="last-modification-content">Overwatch : Xbox One</p>
@@ -91,10 +102,12 @@
                             </div>
                             <div class="user-creation-date">
                                 <p class="creation-date-title">Created on :</p>
-                                <p class="creation-date-content">19/03/2017</p>
+                                <p class="creation-date-content"> <?= $_user->created_at; ?> </p>
                             </div>
                             <button class="user-delete button button-2">Delete</button>
                         </div>
+                        <?php endforeach; ?>
+
                     </div>
                 </div>
 
