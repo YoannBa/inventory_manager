@@ -76,11 +76,6 @@ header .logo .logo-text
  * Pop-ins
  */
 
-.pop-in.sign-up
-{
-display: none;
-}
-
 .pop-in form
 {
 	width: 100%;
@@ -107,4 +102,16 @@ display: none;
 {
 	height: inherit;
 	margin: auto;
+}
+
+.login .pop-in.connection
+{
+	display: block;
+	opacity: 1;
+}
+
+.signup .pop-in.sign-up
+{
+	display: block;
+	opacity: 1;
 }

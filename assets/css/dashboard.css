@@ -112,7 +112,7 @@
 }
 
 /* Inventory slide */
-.dashboard-container .inventory-slide
+.dashboard-container.inventory .inventory-slide
 {
 	display: inline-block;
 }
@@ -225,6 +225,11 @@
 	transition: transform 0.3s ease;
 }
 
+.dashboard-container.modify .inventory-slide .modifications-object
+{
+	transform: translateX(0vw);
+}
+
 .dashboard-container .inventory-slide .modifications-object label
 {
 	display: block;
@@ -265,6 +270,10 @@
 }
 
 /* Users slide */
+.dashboard-container.users .users-slide
+{
+	display: inline-block;
+}
 
 .dashboard-container .users-slide .user-infos
 {
@@ -334,8 +343,17 @@
 }
 
 /* Export slide */
+.dashboard-container.export .export-slide
+{
+	display: inline-block;
+}
 
 /* Settings slide */
+.dashboard-container.settings .settings-slide
+{
+	display: inline-block;
+}
+
 .dashboard-container .dashboard-slide .settings-container label
 {
 	font-size: 18px;
