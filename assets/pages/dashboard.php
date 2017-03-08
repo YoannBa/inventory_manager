@@ -106,7 +106,9 @@
 
                         <?php foreach( $users as $_user ): ?>
                         <div class="user-infos">
-                            <div class="user-photo"></div>
+                            <div class="photo-container">
+                                <img src="../users_images/<?= $_user->photo_path ?>" alt="User photo"class="user-photo"></img>
+                            </div>
                             <p class="user-name"> <?= $_user->name; ?> </p>
                             <div class="user-last-modification">
                                 <p class="last-modification-title">Last modification : </p>

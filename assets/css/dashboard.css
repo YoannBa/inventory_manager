@@ -32,17 +32,20 @@
 .dashboard-container .panel-left .user-info .user-photo
 {
 	width: 70px;
-	height: 70px;
-	border-radius: 100%;
+	height: auto;
 	background: #FAFAFA;
 	display: inline-block;
+	position: relative;
 }
 
 .dashboard-container .panel-left .user-info .photo-container
 {
 	position: relative;
 	width: 70px;
+	height: 70px;
 	margin: auto;
+	overflow: hidden;
+	border-radius: 100%;
 }
 
 .dashboard-container .panel-left .user-info .photo-container:hover .modify-image
@@ -317,13 +320,22 @@
 	position: relative;
 }
 
-.dashboard-container .users-slide .user-photo
+.dashboard-container .users-slide .photo-container
 {
-	background: #303F9F;
+	position: relative;
 	height: 70px;
 	width: 70px;
 	border-radius: 100%;
+	overflow: hidden;
+}
+
+.dashboard-container .users-slide .photo-container .user-photo
+{
+	background: #303F9F;
+	height: auto;
+	width: 70px;
 	display: inline-block;
+	position: absolute;
 }
 
 .dashboard-container .users-slide .user-name
