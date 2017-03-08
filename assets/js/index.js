@@ -13,7 +13,6 @@ index.el.signup_close  	= index.el.container.querySelector('.sign-up .pop-in-clo
 index.el.login_button.addEventListener('click', function (e)
 {
 	e.preventDefault();
-
 	index.el.container.classList.add('login');
 });
 
@@ -21,7 +20,6 @@ index.el.login_button.addEventListener('click', function (e)
 index.el.login_close.addEventListener('click', function (e)
 {
 	e.preventDefault();
-
 	index.el.container.classList.remove('login');
 });
 
@@ -29,7 +27,6 @@ index.el.login_close.addEventListener('click', function (e)
 index.el.signup_button.addEventListener('click', function (e)
 {
 	e.preventDefault();
-
 	index.el.container.classList.add('signup');
 });
 
@@ -37,7 +34,6 @@ index.el.signup_button.addEventListener('click', function (e)
 index.el.signup_close.addEventListener('click', function (e)
 {
 	e.preventDefault();
-
 	index.el.container.classList.remove('signup');
 });
 

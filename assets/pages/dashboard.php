@@ -1,9 +1,8 @@
 <?php
 
-    session_start();
-
     include '../php/config.php';
     include '../php/display_users.php';
+    include '../php/upload_image.php';
 
 ?>
 
@@ -29,8 +28,22 @@
 
             <div class="panel-left">
                 <div class="user-info">
-                    <div class="user-photo"></div>
+                    <div class="photo-container">
+                        <img class="user-photo" src="../users_images/<?= $photo_user[0]->photo_path ?>">
+                        <div class="modify-image"></div>
+                    </div>
                     <p class="user-name"><?= $_SESSION['username'] ?></p>
+                </div>
+
+                <div class="image-form pop-in">
+                    <div class="pop-tile">
+                        <div class="pop-in-close"></div>
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            <label for="image">Image</label>
+                            <input type="file" name="image" id="image" class="input-file">
+                            <button type="submit" name="form" value="image-upload" class="button button-1">Upload</button>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="dashboard-nav">

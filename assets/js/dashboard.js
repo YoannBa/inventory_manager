@@ -9,10 +9,12 @@ dashboard.el.users_link 		= dashboard.el.container.querySelector('.users-link');
 dashboard.el.export_link 		= dashboard.el.container.querySelector('.export-link');
 dashboard.el.settings_link 		= dashboard.el.container.querySelector('.settings-link');
 dashboard.el.modify_buttons		= dashboard.el.container.querySelectorAll('.button-modify');
+dashboard.el.modify_image		= dashboard.el.container.querySelector('.photo-container');
+dashboard.el.modify_image_close	= dashboard.el.container.querySelector('.image-form .pop-in-close');
 
 
 dashboard.data = {};
-dashboard.data.table_nav = ['inventory', 'users', 'export', 'settings'];
+dashboard.data.table_nav = ['inventory', 'users', 'export', 'settings', 'image'];
 
 //Inventory display on nav click
 dashboard.el.inventory_link.addEventListener('click', function (e)
@@ -56,10 +58,21 @@ for (var i = 0; i < dashboard.el.modify_buttons.length; i++)
 	dashboard.el.modify_buttons[i].addEventListener('click', function (e)
 	{
 		e.preventDefault();
-
 		dashboard.el.container.classList.add('modify');
 	});
 }
+
+dashboard.el.modify_image.addEventListener('click', function () 
+{
+	remove_class_nav();
+	dashboard.el.container.classList.add('image');
+});
+
+dashboard.el.modify_image_close.addEventListener('click', function () 
+{
+	console.log('hey')
+	remove_class_nav();
+});
 
 //Remove classes
 function remove_class_nav ()

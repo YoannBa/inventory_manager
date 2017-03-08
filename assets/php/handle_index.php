@@ -35,7 +35,6 @@ if (!empty($_POST))
 			{
 				if ($pass_bdd[0]->password == $password)
 				{
-					session_start();
 					$_SESSION['username'] = $username;
 
 					header('Location: assets/pages/dashboard.php');
@@ -82,13 +81,14 @@ if (!empty($_POST))
 
 		if (empty($error_messages))
 		{
-			$prepare = $pdo->prepare('INSERT INTO users (name, password, email) VALUES (:name, :password, :email)');
+			$prepare = $pdo->prepare('INSERT INTO users (name, password, email, photo_path) VALUES (:name, :password, :email, :photo_path)');
 
 			$password = hash('sha256', $password);
 
 			$prepare->bindValue('name', $username);
 			$prepare->bindValue('password', $password);
 			$prepare->bindValue('email', $mail);
+			$prepare->bindValue('photo_path', 'default.png');
 
 			$prepare->execute();
 

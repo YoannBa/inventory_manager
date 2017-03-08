@@ -3,6 +3,5 @@
 $query = $pdo->query('SELECT * FROM users');
 $users = $query->fetchAll();
 
-echo '<pre>';
-print_r($users);
-echo '</pre>';
+$query 		= $pdo->query('SELECT * FROM users WHERE name="'.$_SESSION['username'].'"');
+$photo_user = $query->fetchAll();

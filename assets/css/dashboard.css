@@ -38,9 +38,43 @@
 	display: inline-block;
 }
 
+.dashboard-container .panel-left .user-info .photo-container
+{
+	position: relative;
+	width: 70px;
+	margin: auto;
+}
+
+.dashboard-container .panel-left .user-info .photo-container:hover .modify-image
+{
+	opacity: 1;
+}
+
+.dashboard-container .panel-left .user-info .modify-image
+{
+	background: rgba(0, 0, 0, 0.4);
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	opacity: 0;
+	will-change: opacity;
+	transition: opacity 0.15s ease;
+}
+
 .dashboard-container .panel-left .user-info .user-name
 {
 	margin-top: 20px;
+}
+
+.image.dashboard-container .panel-left .image-form
+{
+	display: block;
+	opacity: 1;
+	z-index: 10;
 }
 
 .dashboard-container .panel-left .dashboard-nav
