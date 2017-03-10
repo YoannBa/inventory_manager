@@ -1,11 +1,12 @@
 <?php
 
     include '../php/config.php';
+
+    include '../php/upload_user_image.php';
+    include '../php/add_item.php';
+
     include '../php/display_users.php';
     include '../php/display_items.php';
-
-    include '../php/upload_image.php';
-    include '../php/add_item.php';
 
 ?>
 
@@ -79,7 +80,7 @@
 
                         <div class="object-info">
                             <div class="photo-container">
-                                <img src="../items_images/default.jpg" class="object-photo">
+                                <img src="../items_images/<?= $_item -> image_path ?>" class="object-photo">
                             </div>
                             <div class="object-number">
                                 <p class="number-title">In Stock</p>
@@ -107,7 +108,7 @@
 
                         <div class="modifications-object">
                             <button class="close">Close</button>
-                            <form action="#" method="post">
+                            <form action="#" method="post" enctype="multipart/form-data">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" placeholder="Awesome name" value="Overwatch : Xbox One">
                                 <label for="description">Description</label>
@@ -127,7 +128,7 @@
 
                         <div class="modifications-object adding-form">
                             <button class="close">Close</button>
-                            <form action="#" method="post">
+                            <form action="#" method="post" enctype="multipart/form-data">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" placeholder="Awesome name">
                                 <label for="description">Description</label>
@@ -138,6 +139,7 @@
                                 <input type="number" name="stock_number" id="number" placeholder="50">
                                 <label for="tag">Tag</label>
                                 <input type="text" name="tag" id="tag" placeholder="Tools, Movies" value="">
+                                <input type="file" name="image" id="image" class="input-file">
                                 <button type="submit" name="form" value="add_object" class="button button-1">Add object</button>
                             </form>
                         </div>
@@ -151,7 +153,7 @@
                         <?php foreach( $users as $_user ): ?>
                         <div class="user-infos">
                             <div class="photo-container">
-                                <img src="../users_images/<?= $_user->photo_path ?>" alt="User photo"class="user-photo"></img>
+                                <img src="../users_images/<?= $_user->photo_path ?>" alt="User photo" class="user-photo"></img>
                             </div>
                             <p class="user-name"> <?= $_user->name; ?> </p>
                             <div class="user-last-modification">

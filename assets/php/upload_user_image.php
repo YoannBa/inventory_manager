@@ -38,6 +38,3 @@ if (!empty($_POST) && $_POST['form'] == 'image-upload')
 		$error_messages['upload'] = 'Nothing was uploaded';
 
 }
-
-
-
