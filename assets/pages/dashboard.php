@@ -2,7 +2,10 @@
 
     include '../php/config.php';
     include '../php/display_users.php';
+    include '../php/display_items.php';
+
     include '../php/upload_image.php';
+    include '../php/add_item.php';
 
 ?>
 
@@ -27,6 +30,12 @@
         <div class="dashboard-container inventory">
 
             <div class="panel-left">
+                <a class="logo-section" href="../../index.php">
+                    <div class="clear"></div>
+                    <img src="../images/logo.png" class="logo-image" alt="Logo">
+                    <h1 class="logo-text">inventory</h1>
+                    <div class="clear"></div>
+                </a>
                 <div class="user-info">
                     <div class="photo-container">
                         <img class="user-photo" src="../users_images/<?= $photo_user[0]->photo_path ?>">
@@ -48,10 +57,10 @@
 
                 <div class="dashboard-nav">
                     <ul>
-                        <li><a href="#" class="inventory-link">Inventory</a></li>
-                        <li><a href="#" class="users-link">Users</a></li>
-                        <li><a href="#" class="export-link">Export</a></li>
-                        <li><a href="#" class="settings-link">Settings</a></li>
+                        <li><a href="#" class="inventory-link"><img src="../images/icons/list.png" alt="Inventory icon"><span>Inventory</span></a></li>
+                        <li><a href="#" class="users-link"><img src="../images/icons/users.png" alt="Users icon"><span>Users</span></a></li>
+                        <li><a href="#" class="export-link"><img src="../images/icons/export.png" alt="Export icon"><span>Export</span></a></li>
+                        <li><a href="#" class="settings-link"><img src="../images/icons/settings.png" alt="Settings icon"><span>Settings</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -59,29 +68,45 @@
             <div class="dahsboard-content">
                 <div class="dashboard-slide inventory-slide">
                     <div class="top-name">Inventory</div>
+
+                    <div class="add-object-container">
+                        <button class="add-object button button-1">Add item</button>
+                    </div>
+
                     <div class="objects-container dashboard-content-container">
+
+                        <?php foreach($items as $_item):?>
+
                         <div class="object-info">
-                            <div class="object-photo"></div>
-                            <div class="object-tags">
-                                <p class="tag">Game</p>
-                                <p class="tag-separator"> / </p>
-                                <p class="tag">Xbox</p>
+                            <div class="photo-container">
+                                <img src="../items_images/default.jpg" class="object-photo">
                             </div>
                             <div class="object-number">
                                 <p class="number-title">In Stock</p>
-                                <p class="number-stock">20</p>
+                                <p class="number-stock"> <?= $_item -> stock_number ?> </p>
                             </div>
                             <div class="object-date">
-                                <p class="number-title">Last modified on : </p>
-                                <p class="number-stock">20/02/2017</p>
+                                <p class="number-title">Last modification</p>
+                                <p class="number-stock"> <?= $_item -> date_modification ?> </p>
                             </div>
-                            <p class="object-name">Overwatch : Xbox One</p>
-                            <p class="object-description">Overwatch, the game developped by Blizzard wich is awesome !</p>
-                            <p class="object-price">50€</p>
-                            <button class="button-modify button button-2">Modify</button>
+                            <div class="object-name">
+                            <?= $_item -> name ?>
+                                <div class="object-tags">
+                                    <p class="tag">Game</p>
+                                    <p class="tag-separator"> / </p>
+                                    <p class="tag">Xbox</p>
+                                </div>
+                            </div>
+                            <p class="object-description"> <?= $_item -> description ?> </p>
+                            <div class="object-price">
+                                <p class="price-title"> Price </p>
+                                <p class="price"> <?= $_item -> price ?> € </p>
+                            </div>
+                            <button class="button-modify">Modify</button>
                         </div>
 
                         <div class="modifications-object">
+                            <button class="close">Close</button>
                             <form action="#" method="post">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" placeholder="Awesome name" value="Overwatch : Xbox One">
@@ -96,6 +121,25 @@
                                 <input type="submit">
                             </form>
                             <button class="button-delete button button-1">Delete</button>
+                        </div>
+
+                        <?php endforeach;?>
+
+                        <div class="modifications-object adding-form">
+                            <button class="close">Close</button>
+                            <form action="#" method="post">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" placeholder="Awesome name">
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description" placeholder="My superb object has an awesome description"></textarea>
+                                <label for="price">Price</label>
+                                <input type="text" name="price" id="price" placeholder="200">
+                                <label for="number">Number in stock</label>
+                                <input type="number" name="stock_number" id="number" placeholder="50">
+                                <label for="tag">Tag</label>
+                                <input type="text" name="tag" id="tag" placeholder="Tools, Movies" value="">
+                                <button type="submit" name="form" value="add_object" class="button button-1">Add object</button>
+                            </form>
                         </div>
                     </div>
                 </div>
