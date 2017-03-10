@@ -1,12 +1,12 @@
 <?php
 
-    include '../php/config.php';
+    include 'assets/php/upload_user_image.php';
+    include 'assets/php/add_item.php';
+    include 'assets/php/update_item.php';
+    include 'assets/php/csv_export.php';
 
-    include '../php/upload_user_image.php';
-    include '../php/add_item.php';
-
-    include '../php/display_users.php';
-    include '../php/display_items.php';
+    include 'assets/php/display_users.php';
+    include 'assets/php/display_items.php';
 
 ?>
 
@@ -21,9 +21,9 @@
         <meta name="description" content="Your dashboard - Manage all your inventory from here" />
 
         <!-- Links -->
-        <link href="../css/reset.css" rel="stylesheet" type="text/css" />
-        <link href="../css/general.css" rel="stylesheet" type="text/css" />
-        <link href="../css/dashboard.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/general.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/dashboard.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -31,15 +31,15 @@
         <div class="dashboard-container inventory">
 
             <div class="panel-left">
-                <a class="logo-section" href="../../index.php">
+                <a class="logo-section" href="assets/pages/home.php">
                     <div class="clear"></div>
-                    <img src="../images/logo.png" class="logo-image" alt="Logo">
+                    <img src="assets/images/logo.png" class="logo-image" alt="Logo">
                     <h1 class="logo-text">inventory</h1>
                     <div class="clear"></div>
                 </a>
                 <div class="user-info">
                     <div class="photo-container">
-                        <img class="user-photo" src="../users_images/<?= $photo_user[0]->photo_path ?>">
+                        <img class="user-photo" src="assets/users_images/<?= $photo_user[0]->photo_path ?>">
                         <div class="modify-image"></div>
                     </div>
                     <p class="user-name"><?= $_SESSION['username'] ?></p>
@@ -58,10 +58,10 @@
 
                 <div class="dashboard-nav">
                     <ul>
-                        <li><a href="#" class="inventory-link"><img src="../images/icons/list.png" alt="Inventory icon"><span>Inventory</span></a></li>
-                        <li><a href="#" class="users-link"><img src="../images/icons/users.png" alt="Users icon"><span>Users</span></a></li>
-                        <li><a href="#" class="export-link"><img src="../images/icons/export.png" alt="Export icon"><span>Export</span></a></li>
-                        <li><a href="#" class="settings-link"><img src="../images/icons/settings.png" alt="Settings icon"><span>Settings</span></a></li>
+                        <li><a href="#" class="inventory-link"><img src="assets/images/icons/list.png" alt="Inventory icon"><span>Inventory</span></a></li>
+                        <li><a href="#" class="users-link"><img src="assets/images/icons/users.png" alt="Users icon"><span>Users</span></a></li>
+                        <li><a href="#" class="export-link"><img src="assets/images/icons/export.png" alt="Export icon"><span>Export</span></a></li>
+                        <li><a href="#" class="settings-link"><img src="assets/images/icons/settings.png" alt="Settings icon"><span>Settings</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -80,51 +80,57 @@
 
                         <div class="object-info">
                             <div class="photo-container">
-                                <img src="../items_images/<?= $_item -> image_path ?>" class="object-photo">
+                                <img src="assets/items_images/<?= $_item -> image_path ?>" class="object-photo">
                             </div>
                             <div class="object-number">
                                 <p class="number-title">In Stock</p>
-                                <p class="number-stock"> <?= $_item -> stock_number ?> </p>
+                                <p class="number-stock"><?= $_item -> stock_number ?></p>
                             </div>
                             <div class="object-date">
                                 <p class="number-title">Last modification</p>
-                                <p class="number-stock"> <?= $_item -> date_modification ?> </p>
+                                <p class="number-stock"><?= $_item -> date_modification ?></p>
                             </div>
                             <div class="object-name">
-                            <?= $_item -> name ?>
-                                <div class="object-tags">
-                                    <p class="tag">Game</p>
-                                    <p class="tag-separator"> / </p>
-                                    <p class="tag">Xbox</p>
-                                </div>
+                            <span class="name-title"><?= $_item -> name ?></span>
+                                <div class="object-tags"><?php
+                                        $item_tags = explode(",", $_item -> tags);
+                                        
+                                        foreach ($item_tags as $_tag)
+                                        {
+                                            if (!($_tag == end($item_tags)))
+                                                echo $_tag.' / ';
+                                            else
+                                                echo $_tag;
+                                        }
+                                ?></div>
                             </div>
-                            <p class="object-description"> <?= $_item -> description ?> </p>
+                            <p class="object-description"><?= $_item -> description ?></p>
                             <div class="object-price">
                                 <p class="price-title"> Price </p>
-                                <p class="price"> <?= $_item -> price ?> € </p>
+                                <p class="price"><?= $_item -> price ?>€</p>
                             </div>
-                            <button class="button-modify">Modify</button>
-                        </div>
-
-                        <div class="modifications-object">
-                            <button class="close">Close</button>
-                            <form action="#" method="post" enctype="multipart/form-data">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" placeholder="Awesome name" value="Overwatch : Xbox One">
-                                <label for="description">Description</label>
-                                <textarea id="description" placeholder="My superb object has an awesome description">Overwatch, the game developped by Blizzard wich is awesome !</textarea>
-                                <label for="price">Price</label>
-                                <input type="text" id="price" placeholder="200" value="50">
-                                <label for="number">Number in stock</label>
-                                <input type="number" id="number" placeholder="50" value="20">
-                                <label for="tag">Tag</label>
-                                <input type="text" id="tag" placeholder="Tools, Movies" value="Game, Xbox">
-                                <input type="submit">
-                            </form>
-                            <button class="button-delete button button-1">Delete</button>
+                            <button data-index="<?= $_item -> id ?>" class="button-modify">Modify</button>
                         </div>
 
                         <?php endforeach;?>
+
+                        <div class="modifications-object modif-form">
+                            <button class="close">Close</button>
+                            <form action="#" method="post" enctype="multipart/form-data">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Awesome name" value="Overwatch : Xbox One">
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description" placeholder="My superb object has an awesome description">Overwatch, the game developped by Blizzard wich is awesome !</textarea>
+                                <label for="price">Price</label>
+                                <input type="text" name="price" id="price" placeholder="200" value="50">
+                                <label for="number">Number in stock</label>
+                                <input type="number" name="stock" id="number" placeholder="50" value="20">
+                                <label for="tag">Tag</label>
+                                <input type="text" name="tags" id="tag" placeholder="Tools, Movies" value="Game, Xbox">
+                                <button type="submit" name="form" class="button button-1" value="modif-0">Save</button>
+                            </form>
+                            <button class="button-delete button button-1">Delete</button>
+                        </div>
 
                         <div class="modifications-object adding-form">
                             <button class="close">Close</button>
@@ -153,7 +159,7 @@
                         <?php foreach( $users as $_user ): ?>
                         <div class="user-infos">
                             <div class="photo-container">
-                                <img src="../users_images/<?= $_user->photo_path ?>" alt="User photo" class="user-photo"></img>
+                                <img src="assets/users_images/<?= $_user->photo_path ?>" alt="User photo" class="user-photo"></img>
                             </div>
                             <p class="user-name"> <?= $_user->name; ?> </p>
                             <div class="user-last-modification">
@@ -175,7 +181,9 @@
                 <div class="dashboard-slide export-slide">
                     <div class="top-name">Export</div>
                     <div class="export-container dashboard-content-container">
-                        <button class="export-button button button-2">Export</button>
+                        <form action="#" method="post">
+                            <button class="export-button button button-2" type="submit" value="export" name="form">Export</button>
+                        </form>
                     </div>
                 </div>
 
@@ -202,6 +210,6 @@
 
         </div>
 
-        <script src="../js/dashboard.js"></script>
+        <script src="assets/js/dashboard.js"></script>
     </body>
 </html>

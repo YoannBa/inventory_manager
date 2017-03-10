@@ -102,6 +102,17 @@
 	transition: opacity 0.15s ease;
 }
 
+.image .image-form
+{
+	opacity: 1;
+	display: block;
+}
+
+.image .image-form .pop-tile
+{
+	transform: scale(1);
+}
+
 .dashboard-container .panel-left .user-info .user-name
 {
 	margin-left: 20px;
@@ -309,7 +320,6 @@
 	display: inline-block;
 	font-size: 13px;
 	font-weight: 400;
-	text-transform: uppercase;
 	margin-left: 20px;
 }
 
@@ -318,7 +328,7 @@
 	position: absolute;
 	bottom: 30px;
 	left: 15vw;
-	width: 300px;
+	width: 28%;
 	height: 70px;
 }
 
@@ -383,7 +393,7 @@
 	transition: transform 0.3s ease;
 }
 
-.dashboard-container.modify .inventory-slide .modifications-object
+.dashboard-container.modify .inventory-slide .modifications-object.modif-form
 {
 	transform: translateX(0vw);
 }

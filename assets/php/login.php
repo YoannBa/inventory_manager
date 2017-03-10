@@ -34,7 +34,7 @@ if (!empty($_POST) && $_POST['form'] == 'login')
 			{
 				$_SESSION['username'] = $username;
 
-				header('Location: assets/pages/dashboard.php');
+				header('Location: dashboard');
 			}
 			else
 			{
