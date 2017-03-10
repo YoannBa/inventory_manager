@@ -6,7 +6,7 @@ $allowed_extensions 	= array('jpg', 'jpeg', 'png', 'gif');
 $query = $pdo->query('SELECT id FROM users WHERE name="' . $_SESSION['username'] . '"');
 $session_id = $query->fetchAll();
 
-if ($_POST['form'] == 'image-upload')
+if (!empty($_POST) && $_POST['form'] == 'image-upload')
 {
 	if (!empty($_FILES))
 	{
