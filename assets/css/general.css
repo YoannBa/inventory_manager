@@ -2,44 +2,56 @@
  * General
  */
 
+ .clear
+ {
+ 	clear: both;
+ }
+
 body
 {
 	background: #FAFAFA;
-	padding: 50px 50px;
-	font-family: sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
+	overflow-x: hidden; 
 }
 
 .button
 {
-	padding: 10px 20px;
+	padding: 15px 30px;
 	box-sizing: border-box;
-	font-size: 14px;
-	border-radius: 10px;
+	font-size: 0.833em;
 	font-weight: 700;
 	text-transform: uppercase;
 	text-decoration: none;
-	transition: background 0.15s ease, color 0.15s ease;
+	transition: border 0.15s ease, color 0.15s ease, background 0.15s ease;
 	cursor: pointer;
+	border-radius: 50px;
 }
 
 .button-1
 {
-	background: #009688;
-	border: solid 3px #009688;
+	background: #d73380;
+	border: solid 3px #d73380;
 	color: #FAFAFA;
+}
+
+.button-1:hover
+{
+	background: #FAFAFA;
+	border: solid 3px #FAFAFA;
+	color: #d73380;
 }
 
 .button-2
 {
-	border: solid 3px #303F9F;
-	color: #303F9F;
+	border: solid 3px #FAFAFA;
+	color: #FAFAFA;
 }
 
 .button-2:hover
 {
-	background: #303F9F;
-	color: #FAFAFA;
+	border: solid 3px #d73380;
+	color: #d73380;
 }
 
 .pop-in
@@ -50,10 +62,11 @@ body
 	width: 100vw;
 	height: 100vh;
 	background: rgba(0, 0, 0, 0.5);
-	display: none;
 	opacity: 0;
 	will-change: opacity;
 	transition: opacity 0.3s ease;
+	z-index: -1000;
+	display: none;
 }
 
 .pop-in .pop-tile
@@ -62,18 +75,25 @@ body
 	margin: auto;
 	background: #FAFAFA;
 	height: auto;
-	border-radius: 20px;
-	padding: 30px 30px;
+	border-radius: 10px;
+	padding: 90px 7% 50px 7%;
 	box-sizing: border-box;
 	margin-top: 100px;
+	transform: scale(0);
+	will-change: transform;
+	transition: transform 0.3s ease;
 }
 
 .pop-in .pop-in-close
 {
-	width: 20px;
-	height: 20px;
-	background: #303F9F;
-	float: right;
+	padding: 20px 30px;
+	background: #d73380;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 
 

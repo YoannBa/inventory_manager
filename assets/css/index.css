@@ -5,7 +5,7 @@
 header
 {
 	width: 100vw;
-	padding: 20px 0px;
+	padding: 0px 8%;
 }
 
 header .logo
@@ -15,17 +15,16 @@ header .logo
 
 header .logo .logo-image
 {
-	width: 30px;
-	height: 30px;
-	background: #303F9F;
+	width: 40px;
+	height: 40px;
 	display: inline-block;
 	vertical-align: middle;
 }
 
 header .logo .logo-text
 {
-	font-size: 18px;
-	color: #303F9F;
+	font-size: 1em;
+	color: #FAFAFA;
 	font-weight: 700;
 	display: inline-block;
 	line-height: 30px;
@@ -37,39 +36,64 @@ header .logo .logo-text
  * Landing presentation
  */
 
+ .index-container
+ {
+ 	background: linear-gradient( 135deg, #290679, #460e66);
+ 	padding: 50px 10px;
+ 	height: 100vh;
+ 	width: 100vw;
+ 	color: #FAFAFA;
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ }
+
 .landing-presentation
 {
-	width: 100%;
+	width: 40%;
 	position: relative;
+	margin-left: 8%;
+	font-size:18px;
 }
 
 .landing-presentation .hero-title
 {
-	font-size: 60px;
-	color: #303F9F;
+	font-size: 3em;
+	line-height: 1.2em;
 	margin-top: 150px;
+	font-weight: 700;
 }
 
 .landing-presentation .hero-subtitle
 {
-	font-size: 14px;
-	color: #7986CB;
+	font-size: 1em;
+	line-height: 1.5em;
 	margin-top: 30px;
 }
 
-.landing-presentation .landing-img
+.landing-presentation .button
 {
-	background: #303F9F;
+	margin-right: 20px;
+}
+
+.landing-presentation .landing-illustration
+{
 	position: absolute;
-	width: 300px;
-	height: 300px;
-	right: 0;
+	width: 400px;
+	height: 400px;
+	right: -100%;
 	top: calc(50% - 150px);
+}
+
+.landing-presentation .landing-illustration .image-illustration
+{
+	width: 100%;
+	height: auto;
 }
 
 .landing-presentation .landing-access
 {
-	margin-top: 50px;
+	margin-top: 60px;
 }
 
 /*
@@ -79,39 +103,79 @@ header .logo .logo-text
 .pop-in form
 {
 	width: 100%;
-	margin: 50px 30px;
 	box-sizing: border-box;
+	font-size: 18px;
+	text-align: center;
 }
 
 .pop-in label
 {
-	display: block;
+	display: none;
+}
+
+.pop-in .pop-in-title
+{
+	color: #d73380;
+	font-size: 1.728em;
+	font-weight: 700;
+	width: 40%;
+	padding-left: 20px;
+}
+
+.pop-in .underline-title
+{
+	height: 2px;
+	background: #d73380;
+	width: calc(100% - 40px);
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 .pop-in .input-text
 {
 	display: block;
-	width: calc(100% - 60px);
+	width: calc(100%);
 	padding: 15px 10px;
-	background: #B2DFDB;
+	background: none;
+	border: 1px solid rgba(0, 0, 0, 0.4);
 	border-radius: 10px;
-	margin: 10px 0px 20px 0px;
+	margin: 30px 0px 0px 0px;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.index-container .pop-in
+{
+	display: block;
 }
 
 .pop-in .input-submit
 {
-	height: inherit;
-	margin: auto;
+	margin-top: 30px;
+}
+
+.pop-in .input-submit:hover
+{
+	border: #d73380 3px solid;
 }
 
 .login .pop-in.connection
 {
-	display: block;
 	opacity: 1;
+	z-index: 10;
+}
+
+.login .pop-tile
+{
+	transform: scale(1);
 }
 
 .signup .pop-in.sign-up
 {
-	display: block;
 	opacity: 1;
+	z-index: 10;
+}
+
+.signup .pop-tile
+{
+	transform: scale(1);
 }
