@@ -3,11 +3,13 @@
 if (!empty($_POST) && $_POST['form'] == 'signup')
 {
 	
+	//Get datas from form
 	$username = $_POST['username'];
 	$mail = $_POST['mail'];
 	$password = $_POST['password'];
 	$confirm_password = $_POST['confirm-pass'];
 
+	//Check datas
 	if(!isset($username))
 		$error_messages['username'] = 'Missing Value';
 
@@ -23,6 +25,7 @@ if (!empty($_POST) && $_POST['form'] == 'signup')
 	if($confirm_password != $password)
 		$error_messages['confirm_password'] = 'Not the same password';
 
+	//upload to db
 	if (empty($error_messages))
 	{
 		$prepare = $pdo->prepare('INSERT INTO users (name, password, email, photo_path) VALUES (:name, :password, :email, :photo_path)');
@@ -35,13 +38,5 @@ if (!empty($_POST) && $_POST['form'] == 'signup')
 		$prepare->bindValue('photo_path', 'default.png');
 
 		$prepare->execute();
-
 	}
-	else
-	{
-		echo '<pre>';
-		print_r($error_messages);
-		echo '</pre>';
-	}
-
 }

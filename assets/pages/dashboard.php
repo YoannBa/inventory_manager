@@ -1,10 +1,12 @@
 <?php
-
+    
+    //Form handling scripts
     include 'assets/php/upload_user_image.php';
     include 'assets/php/add_item.php';
     include 'assets/php/update_item.php';
     include 'assets/php/csv_export.php';
 
+    //Displaying scripts
     include 'assets/php/display_users.php';
     include 'assets/php/display_items.php';
 
@@ -24,19 +26,32 @@
         <link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/general.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/dashboard.css" rel="stylesheet" type="text/css" />
-
     </head>
 
     <body>
-        <div class="dashboard-container inventory">
+        <div class="dashboard-container inventory <?= !empty($error_messages) ? 'error' : '' ?>">
+        <div class="errors-container"><?php
 
+                if(!empty($error_messages))
+                {
+                    foreach ($error_messages as $_key => $_error)
+                    {
+                        echo '<p>'.$_key.' : '.$_error.'</p>';
+                    }
+                }
+
+        ?></div>
+            
+            <!-- left panel for navigation -->
             <div class="panel-left">
-                <a class="logo-section" href="assets/pages/home.php">
+
+                <a class="logo-section" href="index.php">
                     <div class="clear"></div>
                     <img src="assets/images/logo.png" class="logo-image" alt="Logo">
                     <h1 class="logo-text">inventory</h1>
                     <div class="clear"></div>
                 </a>
+
                 <div class="user-info">
                     <div class="photo-container">
                         <img class="user-photo" src="assets/users_images/<?= $photo_user[0]->photo_path ?>">
@@ -64,20 +79,20 @@
                         <li><a href="#" class="settings-link"><img src="assets/images/icons/settings.png" alt="Settings icon"><span>Settings</span></a></li>
                     </ul>
                 </div>
-            </div>
 
+            </div>
+            
+            <!-- Main middle part -->
             <div class="dahsboard-content">
+
+                <!-- Inventory slide -->
                 <div class="dashboard-slide inventory-slide">
                     <div class="top-name">Inventory</div>
-
                     <div class="add-object-container">
                         <button class="add-object button button-1">Add item</button>
                     </div>
-
                     <div class="objects-container dashboard-content-container">
-
                         <?php foreach($items as $_item):?>
-
                         <div class="object-info">
                             <div class="photo-container">
                                 <img src="assets/items_images/<?= $_item -> image_path ?>" class="object-photo">
@@ -111,7 +126,6 @@
                             </div>
                             <button data-index="<?= $_item -> id ?>" class="button-modify">Modify</button>
                         </div>
-
                         <?php endforeach;?>
 
                         <div class="modifications-object modif-form">
@@ -151,11 +165,11 @@
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- User slide -->
                 <div class="dashboard-slide users-slide">
                     <div class="top-name">Users</div>
                     <div class="users-container dashboard-content-container">
-
                         <?php foreach( $users as $_user ): ?>
                         <div class="user-infos">
                             <div class="photo-container">
@@ -174,10 +188,10 @@
                             <button class="user-delete button button-2">Delete</button>
                         </div>
                         <?php endforeach; ?>
-
                     </div>
                 </div>
-
+                    
+                <!-- Export slide -->
                 <div class="dashboard-slide export-slide">
                     <div class="top-name">Export</div>
                     <div class="export-container dashboard-content-container">
@@ -186,7 +200,8 @@
                         </form>
                     </div>
                 </div>
-
+                
+                <!-- Settings slide -->
                 <div class="dashboard-slide settings-slide">
                     <div class="top-name">Settings</div>
                     <div class="settings-container dashboard-content-container">
@@ -197,7 +212,6 @@
                                 <option value="euros">Euros</option>
                                 <option value="yens">Yens</option>
                             </select>
-
                             <label for="theme">Theme</label>
                             <select name="theme">
                                 <option value="bright">Bright</option>
@@ -206,6 +220,7 @@
                         </form>
                     </div>
                 </div>
+
             </div>
 
         </div>

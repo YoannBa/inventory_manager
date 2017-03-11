@@ -2,6 +2,8 @@
 
 if(!empty($_POST) && $_POST['form'] == 'export')
 {
+
+	//Get Informations from db
 	$array = array(array('id', 'name', 'description', 'price', 'number in stock', 'tags', 'last modification user', 'last modification date'));
 
 	$query = $pdo->query('SELECT * FROM items');
@@ -23,6 +25,7 @@ if(!empty($_POST) && $_POST['form'] == 'export')
 		array_push($array, $second_array);
 	}
 
+	//Informations to create the csv file
 	function array2csv(array &$array)
 	{
 	   if (count($array) == 0) {
@@ -38,6 +41,7 @@ if(!empty($_POST) && $_POST['form'] == 'export')
 	   return ob_get_clean();
 	}
 
+	//Informations for downloading the file
 	function download_send_headers($filename) {
 	    $now = gmdate("D, d M Y H:i:s");
 	    header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
@@ -52,8 +56,8 @@ if(!empty($_POST) && $_POST['form'] == 'export')
 	    header("Content-Transfer-Encoding: binary");
 	}
 
+	//Calls
 	download_send_headers("data_export_" . date("Y-m-d") . ".csv");
 	echo array2csv($array);
 	die();
-
 }

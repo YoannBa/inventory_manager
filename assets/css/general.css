@@ -96,4 +96,12 @@ body
 	border-bottom-left-radius: 10px;
 }
 
+::-webkit-input-placeholder
+{
+  color: rgba(127, 127, 127, 0.8);
+}
 
+::-moz-placeholder
+{
+  color: rgba(127, 127, 127, 0.8);
+}

@@ -2,6 +2,8 @@
 
 if (!empty($_POST) && $_POST['form'] == 'add_object')
 {
+
+	//Get informations from the form
 	$name 				= $_POST['name'];
 	$description 		= $_POST['description'];
 	$price 				= $_POST['price'];
@@ -11,6 +13,7 @@ if (!empty($_POST) && $_POST['form'] == 'add_object')
 	$user_modification	= $_SESSION['username'];
 	$allowed_extensions	= array('jpg', 'jpeg', 'png', 'gif');
 
+	//Check datas
 	if (!empty($_FILES))
 	{
 		if ($image['error'] > 0)
@@ -22,7 +25,7 @@ if (!empty($_POST) && $_POST['form'] == 'add_object')
 			$error_messages['extension'] = 'Wrong extension';
 
 		$name_file = 'item-'.$name.'.'.$extension;
-		$result = move_uploaded_file($image['tmp_name'], '../items_images/'.$name_file);
+		$result = move_uploaded_file($image['tmp_name'], 'assets/items_images/'.$name_file);
 	}
 	else
 		$name_file = 'default.jpg';
@@ -42,6 +45,7 @@ if (!empty($_POST) && $_POST['form'] == 'add_object')
 	if(!isset($tags))
 		$error_messages['tag'] = 'Missing Value';
 
+	//Upload on db
 	if (empty($error_messages))
 	{
 		$prepare = $pdo->prepare('INSERT INTO items (name, description, price, stock_number, tags, user_modification, image_path) VALUES (:name, :description, :price, :stock_number, :tags, :user_modification, :image_path)');
@@ -55,12 +59,5 @@ if (!empty($_POST) && $_POST['form'] == 'add_object')
 		$prepare->bindValue('image_path', $name_file);
 
 		$prepare->execute();
-
-	}
-	else
-	{
-		echo '<pre>';
-		print_r($error_messages);
-		echo '</pre>';
 	}
 }

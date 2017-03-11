@@ -1,5 +1,5 @@
 <?php
-
+    
     include 'assets/php/login.php';
     include 'assets/php/signup.php';
 ?>
@@ -19,12 +19,12 @@
         <link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/general.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/index.css" rel="stylesheet" type="text/css" />
-
     </head>
 
     <body>
         <div class="index-container">
-
+            
+            <!-- header -->
             <header>
                 <a href="#" class="logo">
                     <img class="logo-image" src="assets/images/logo.png" alt="Inventory logo"></img>
@@ -32,6 +32,7 @@
                 </a>
             </header>
 
+            <!-- landing screen -->
             <div class="landing-presentation">
                 <h2 class="hero-title">Manage your inventory online without effort</h2>
                 <p class="hero-subtitle">Inventory is an online collaborative tool to help you with your stocks. Invite users, manage items and export your inventory to your computer.</p>
@@ -44,7 +45,8 @@
                     <a href="#" class="button-2 button sign-up">Sign up</a>
                 </div>
             </div>
-
+            
+            <!-- Login pop-in -->
             <div class="connection pop-in">
                 <div class="pop-tile">
                     <div class="pop-in-close">Close</div>
@@ -59,7 +61,8 @@
                     </form>
                 </div>
             </div>
-
+            
+            <!-- Signup pop-in -->
             <div class="sign-up pop-in">
                 <div class="pop-tile">
                     <div class="pop-in-close">Close</div>

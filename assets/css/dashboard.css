@@ -1,3 +1,7 @@
+/*
+ * Dashboard
+ */
+
 .dashboard-container
 {
 	position: fixed;
@@ -5,10 +9,32 @@
 	left: 0;
 	width: 100vw;
 	height: 100vh;
+	font-size: 14px;
+}
+
+.errors-container
+{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	padding: 30px 50px;
+	background: red;
+	color: white;
+	font-size: 1em;
+	z-index: 10000;
+	will-change: transform;
+	transform: translateY(100%);
+	transition: transform ease 0.3s;
+}
+
+.error .errors-container
+{
+	transform: translateY(0%);
 }
 
 /*
- * Panel left
+ * Left panel for navigation
  */
 
 .dashboard-container .panel-left
@@ -159,7 +185,7 @@
 }
 
 /*
- * Dashboard content right
+ * Dashboard main part 
  */
 
 .dashboard-container .dahsboard-content
@@ -207,6 +233,7 @@
 }
 
 /* Inventory slide */
+
 .dashboard-container.inventory .inventory-slide
 {
 	display: inline-block;
@@ -456,6 +483,7 @@
 }
 
 /* Users slide */
+
 .dashboard-container.users .users-slide
 {
 	display: inline-block;
@@ -538,12 +566,14 @@
 }
 
 /* Export slide */
+
 .dashboard-container.export .export-slide
 {
 	display: inline-block;
 }
 
 /* Settings slide */
+
 .dashboard-container.settings .settings-slide
 {
 	display: inline-block;

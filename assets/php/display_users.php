@@ -1,5 +1,6 @@
 <?php
 
+//Get db values
 $query = $pdo->query('SELECT * FROM users');
 $users = $query->fetchAll();
 
