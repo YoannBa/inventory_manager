@@ -5,6 +5,7 @@
     include 'assets/php/add_item.php';
     include 'assets/php/update_item.php';
     include 'assets/php/csv_export.php';
+    include 'assets/php/delete-item.php';
 
     //Displaying scripts
     include 'assets/php/display_users.php';
@@ -143,7 +144,9 @@
                                 <input type="text" name="tags" id="tag" placeholder="Tools, Movies" value="Game, Xbox">
                                 <button type="submit" name="form" class="button button-1" value="modif-0">Save</button>
                             </form>
-                            <button class="button-delete button button-1">Delete</button>
+                            <form action="#" method="post">
+                                <button class="button-delete button button-1" name="form" type="submit" value="delete-0">Delete</button>
+                            </form>
                         </div>
 
                         <div class="modifications-object adding-form">

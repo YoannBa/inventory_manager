@@ -21,6 +21,7 @@ dashboard.el.modif_item_price 		= dashboard.el.modif_item_form.querySelector('#p
 dashboard.el.modif_item_tag 		= dashboard.el.modif_item_form.querySelector('#tag');
 dashboard.el.modif_item_stock 		= dashboard.el.modif_item_form.querySelector('#number');
 dashboard.el.modif_close 			= dashboard.el.modif_item_form.querySelector('.close');
+dashboard.el.modif_delete			= dashboard.el.modif_item_form.querySelector('.button-delete');
 
 dashboard.data = {};
 dashboard.data.table_nav = ['inventory', 'users', 'export', 'settings'];
@@ -83,6 +84,7 @@ for (var i = 0; i < dashboard.el.modify_buttons.length; i++)
 		dashboard.el.modif_item_stock.value         	= stock;
 
 		dashboard.el.modif_item_value.value = "modif-" + item_index;
+		dashboard.el.modif_delete.value = "delete-" + item_index;
 		dashboard.el.container.classList.add('modify');
 	});
 }

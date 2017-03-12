@@ -19,7 +19,7 @@
 	left: 0;
 	width: 100vw;
 	padding: 30px 50px;
-	background: red;
+	background: #dc3652;
 	color: white;
 	font-size: 1em;
 	z-index: 10000;
@@ -460,6 +460,12 @@
 	border-radius: 5px;
 }
 
+.dashboard-container .inventory-slide .modifications-object button[type="submit"]
+{
+	width: 100%;
+	margin-bottom: 30px;
+}
+
 .dashboard-container .inventory-slide .modifications-object textarea
 {
 	margin-bottom: 30px;
@@ -472,14 +478,17 @@
 	resize: none;
 }
 
-.dashboard-container .inventory-slide .modifications-object input[type="submit"]
-{
-	cursor: pointer;
-}
-
 .dashboard-container .inventory-slide .modifications-object .button-delete
 {
 	width: 100%;
+	background: #dc3652;
+	border: 3px solid #dc3652;
+}
+
+.dashboard-container .inventory-slide .modifications-object .button-delete:hover
+{
+	background: #FAFAFA;
+	border: 3px solid #FAFAFA;
 }
 
 /* Users slide */
